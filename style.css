@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    overflow-x: hidden;
+    
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s, backdrop-filter 0.3s, background 0.3s;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    margin-left: 8px;
+}
+
+header.scrolled {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(45deg, rgba(0, 255, 170, 0.5), rgba(0, 123, 255, 0.5), rgba(255, 37, 182, 0.5));
+}
+
+header.top {
+    background: transparent;
+}
+
+
+
+/* Estilo para la barra de desplazamiento */
+
+
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carousel-large {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-large-item {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-large-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-large-controls {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.carousel-large-controls span {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.carousel-item {
+    min-width: 200px; 
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px; 
+    padding: 25px; 
+    text-align: center;
+    backdrop-filter: blur(-30px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    backdrop-filter: blur(10px);
+    background: linear-gradient(45deg, rgba(0, 255, 170, 0.5), rgba(0, 123, 255, 0.5), rgba(255, 37, 182, 0.5));
+}
+
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(0, 255, 170, 0.5), rgba(0, 123, 255, 0.5), rgba(255, 37, 182, 0.5));
+    backdrop-filter: blur(10px);
+}
+
+.sidebar {
+    text-align: left;
+    height: 91%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: -17px;
+    background: linear-gradient(-45deg, rgba(0, 255, 170, 0.5), rgba(0, 123, 255, 0.5), rgba(255, 37, 182, 0.5));
+    backdrop-filter: blur(40px);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 10000; 
+    border-radius: 25px;
+}
+
+.sidebar a {
+    margin-left: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    position: flex;
+}
+
+.sidebar a:hover {
+    color: #f1f1f15e;
+}
+
+.open-btn {
+    font-size: 35px;
+    cursor: pointer;
+    background-color:transparent;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border: none;
+    position: absolute;
+    left: 30px;
+    top: 36px;
+    transform: translateY(-50%);
+    z-index: 1001;
+    margin-left: 0px;
+}
+
+.open-btn:hover {
+    color: #f1f1f15e;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: -3px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
+    cursor: pointer;
+}
+

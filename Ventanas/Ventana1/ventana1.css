@@ -1,0 +1,57 @@
+/* Estilos para el botón que abre la ventana flotante */
+#open-button-category1 {
+    font-size: 13px;
+    background-color: transparent;
+    color: #555;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #open-button-category1:hover {
+    color: #fff;
+  }
+
+  /* Estilos para la ventana flotante */
+  #floating-window-category1 {
+    z-index: 1500;
+    overflow-y: auto;
+    color: #fff;
+    width: 1200px;
+    height: 550px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Estilos para mostrar la ventana flotante */
+  #floating-window-category1.abierto {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Estilos para el botón de cierre */
+  #close-button-category1 {
+    font-size: 25px;
+    top: 5px;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    float: right;
+  }
+
+  #close-button-category1:hover {
+    color: #f1f1f15e;
+  }

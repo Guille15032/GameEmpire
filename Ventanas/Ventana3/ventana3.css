@@ -1,0 +1,64 @@
+/* Estilos para el botón que abre la ventana flotante */
+#open-button-category3 {
+    font-size: 13px;
+    background-color: transparent;
+    color: #555;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #open-button-category3:hover {
+    color: #fff;
+  }
+
+  /* Estilos para la ventana flotante */
+  #floating-window-category3 {
+    z-index: 1500;
+    overflow-y: auto;
+    color: #fff;
+    width: 1200px;
+    height: 550px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    /* Inicialmente, la ventana está reducida */
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Ocultamos la ventana flotante por defecto */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Animación para abrir y cerrar la ventana */
+  }
+
+  /* Estilos para mostrar la ventana flotante */
+  #floating-window-category3.abierto {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    /* Mostramos la ventana a tamaño completo */
+    /* max-height: 1000px; */
+    /* Descomenta esta línea para establecer un máximo de altura para la ventana */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Animación para abrir y cerrar la ventana */
+  }
+
+  /* Estilos para el botón de cierre */
+  #close-button-category3 {
+    font-size: 25px;
+    top: 5px;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    float: right;
+  }
+
+  #close-button-category3:hover {
+    color: #f1f1f15e;
+  }
