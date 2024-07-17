@@ -123,7 +123,7 @@
     .modal {
       display: none;
       position: fixed;
-      z-index: 1;
+      z-index: 1001;
       left: 0;
       top: 0;
       width: 100%;
@@ -133,19 +133,24 @@
     }
 
     .modal-content {
-      position: relative;
-      margin: 15% auto;
+      z-index: 100;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       padding: 20px;
-      width: 80%;
-      max-width: 400px;
+      width: 1000px;
+      max-height: 80vh;
       background-color: #1a1a1a;
       border-radius: 25px;
       text-align: center;
+      overflow-y: auto;
+      /* Scroll vertical interno */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .modal-content:hover {
-      background-color: #1a1a1a;
-    }
+    
+
 
     .close-btnProd {
       position: absolute;
@@ -176,7 +181,7 @@
     }
 
     #addToCartBtn:hover {
-      transform: scale(1.05);
+      transform: scale(1.01);
     }
 
     .hidden {
@@ -222,7 +227,7 @@
 
 
   <div style="margin-top: 175px;" class="categories">
-    <h2>Pre-Order<button class="info-btn" id="open-button-category1">Ver más ></button></h2>
+    <h2>Pre-Order</h2>
     <div class="carousel">
 
       <!--Model1-->
@@ -230,16 +235,36 @@
         <img src="img/AssasinsCreed.avif" alt="Producto 1">
         <h3>Assassin’s Creed Shadows</h3>
         <p class="price">US $69.99</p>
-        <p class="description hidden">Descripción del videojuego Assassin’s Creed Shadows.</p>
+        <p class="description hidden">¡Sumérgete en una épica historia de acción y aventura ambientada en el Japón
+          feudal! Explora un fascinante mundo abierto durante una época turbulenta en la piel de una letal asesina
+          shinobi y un legendario y poderoso samurái. Alterna fácilmente entre dos protagonistas con una insólita
+          alianza mientras descubres el destino que comparten. Domina estilos de juego complementarios, crea tu propia
+          liga de shinobi, personaliza tu guarida y marca el inicio de una nueva era en Japón.
+
+          - Explora y déjate cautivar por el mundo abierto del Japón feudal: desde espectaculares ciudadelas y puertos
+          bulliciosos hasta apacibles santuarios, pasando por paisajes asolados por la guerra. Experimenta todas las
+          estaciones, el impredecible cambio del clima y un entorno reactivo mientras disfrutas de tu aventura.
+          - Encarna a Naoe, una asesina shinobi, y a Yasuke, un legendario samurái, y disfruta de su apasionante
+          historia mientras dominas sus estilos de juego complementarios. Naoe te permitirá actuar con sigilo y
+          agilidad, para confundir a tus enemigos y evitar que te detecten. En cambio, Yasuke puede atacar a sus
+          contrincantes con una precisión y un poder mortales. Desbloquea equipo y habilidades nuevas con independencia
+          entre personajes.
+          - Tu mejor arma será la información: construye tu propia red de espías para ver y escuchar todo lo que ocurre
+          en Japón y dar caza a tu próximo objetivo. Por el camino, reclutarás aliados nuevos con habilidades únicas que
+          te ayudarán a completar tus misiones.
+          - Construye una guarida totalmente personalizable para tu liga de shinobi, donde podrás entrenar a tus
+          aliados, elaborar nuevo equipamiento e interactuar con personajes clave. Elige la disposición, la decoración y
+          los accesorios que más te gusten.</p>
+
         <button class="info-btn" onclick="openModal(this)">Más información</button>
       </div>
       <div id="productModal" class="modal">
         <div class="modal-content">
           <span class="close-btnProd" onclick="closeModal()">❌</span>
           <h3 id="modalTitle"></h3>
-          <p id="modalPrice"></p>
-          <p id="modalDescription">Aquí irá la descripción del videojuego.</p>
-          <button class="btn-agregar" data-id="1">🛒</button>
+          <p style="text-align: left;" id="modalDescription">Aquí irá la descripción del videojuego.</p>
+          <p style="margin-top: 30px; font-size: 28px;" id="modalPrice"></p>
+          <button style="font-size: 20px;" id="addToCartBtn" data-id="1">🛒</button>
         </div>
       </div>
       <!--Fin Model1-->
@@ -248,21 +273,85 @@
         <img src="img/DragonQuestIII.avif" alt="Producto 2">
         <h3>Dragon Quest III HD-2D Remake</h3>
         <p class="price">US $59.99</p>
-        <p class="description hidden">Descripción del videojuego Dragon Quest III.</p>
+        <p class="description hidden">DRAGON QUEST III HD-2D Remake es una recreación asombrosa de la obra maestra tan
+          querida y nostálgica que marca el inicio de la Trilogía de Erdrick.
+
+          Historia:
+          Hace años, el gran héroe Ortega se despidió de su esposa y su bebé para embarcarse en una misión peligrosa con
+          el fin de derrotar al temible Archivillano Baramos. Sin embargo, no pudo contra él, de modo que Baramos sigue
+          siendo una amenaza para el mundo entero. Hoy, el hijo o la hija (¡tú decides!) de aquel gran héroe cumple 16
+          años y el rey de Aliahan requiere su presencia para confiarle una misión de máxima importancia: continuar con
+          la travesía de Ortega, derrotar a Baramos y salvar el mundo.</p>
         <button class="info-btn" onclick="openModal(this)">Más información</button>
       </div>
       <div class="carousel-item">
         <img src="img/FarmingSim25.avif" alt="Producto 3">
         <h3>Farming Simulator 25</h3>
         <p class="price">US $59.99</p>
-        <p class="description hidden">Descripción del videojuego Farming Simulator 25</p>
+        <p class="description hidden">Farming Simulator 25 inunda los campos con un montón de novedades en forma de
+          máquinas, funciones, mejoras visuales y hasta agua dulce para cultivar arroz, las cuales añaden aún más
+          profundidad y diversidad agrícola a una saga apta para toda la familia.
+
+          Más jugabilidad: nuevos cultivos, animales y otras funciones
+
+          Embárcate en una aventura mundial y construye un imperio agrícola en un exuberante paisaje situado en el este
+          asiático repleto de arrozales, un entorno norteamericano con abundantes espacios abiertos o una ubicación
+          centroeuropea con campos verdes entre estanques y ríos.
+
+          Planta dos tipos de arroz, espinacas y más cultivos nuevos, a elegir entre más de 20 en total. Animales como
+          los fuertes búfalos se unen a las vacas, ovejas, cerdos, pollos, caballos y demás ganado, mientras que las
+          nuevas cadenas de producción y misiones de construcción llegan para ampliar tus oportunidades de negocio.
+
+          Más máquinas de marcas internacionales líderes
+
+          Más de 400 máquinas y artículos de más de 150 marcas internacionales de primera como Case IH, CLAAS, Fendt,
+          John Deere, Kubota, Massey Ferguson, New Holland, Valtra y muchas más te ayudan en tus tareas de agricultura,
+          silvicultura y ganadería. Tú decides si prefieres construir tu legado en solitario o cooperativamente en modo
+          multijugador.
+        </p>
         <button class="info-btn" onclick="openModal(this)">Más información</button>
       </div>
-      <div class="carousel-item ">
+      <div class="carousel-item">
         <img src="img/LifeIsStrange.avif" alt="Producto 3">
         <h3>Life is Strange: Double Exposure</h3>
-        <p>US $49.99</p>
-        <button class="info-btn">Más información</button>
+        <p class="price">US $49.99</p>
+        <p class="description hidden">¡No pierdas la oportunidad de unirte a la conversación en torno a este inolvidable
+          y sobrenatural caso de asesinato envuelto en misterio!
+
+
+          Max Caulfield, fotógrafa residente en la prestigiosa Universidad Caledon, descubre a su nueva y más ímtima
+          amiga, Safi, muerta en la nieve.
+
+          Asesinada.
+
+          Para salvarla, Max intenta hacer reboninar el tiempo, un poder que no ha utilizado en años; en lugar de eso,
+          Max abre el camino a una línea temporal paralela en la que Safi sigue viva... ¡y en peligro!
+
+          Max se da cuenta de que el asesino pronto volverá a atacar... en ambas versiones de la realidad.
+
+          Con su nuevo poder para alternar entre dos líneas temporales, ¿podrá Max resolver el misterio antes de que se
+          cometa el mismo asesinato?
+
+          UNA CHICA ORDINARIA CON UN PODER EXTRAORDINARIO
+          Max se ve inmersa en un emocionante y sobrenatural caso de asesinato envuelto en misterio... ¡más peligroso
+          que nunca!
+
+          ATRAVIESA DOS LÍNEAS TEMPORALES
+          Forma alianzas y persigue a sospechosos a través de dos versiones de la realidad, dando forma a ambas líneas
+          temporales mediante elecciones permanentes.
+
+          CARRERA CONTRA EL TIEMPO
+          Un detective implacable tiene a Max en la mira, y el asesino de Safi se acerca más con cada pista descubierta.
+          ¿Podrá Max sobrevivir el tiempo suficiente para hacer lo imposible?
+
+          DECIDE EL DESTINO DE CALEDON
+          Explora dos versiones de un vívido campus invernal, cada una repleta de pistas, secretos y decisiones
+          difíciles.
+
+          BANDA SONORA EXCLUSIVA
+          ¡Magnífica música original, nuevas canciones y fantásticos temas con licencia!
+        </p>
+        <button class="info-btn" onclick="openModal(this)">Más información</button>
       </div>
       <div class="carousel-item ">
         <img src="img/CallOfDutyBlackOps.avif" alt="Producto 3">
@@ -333,7 +422,7 @@
       <!-- Más productos aquí -->
     </div>
 
-    <h2>Los favoritos<button class="info-btn" id="open-button-category2">Ver más ></button></h2>
+    <h2>Los favoritos</h2>
     <div class="carousel">
       <div class="carousel-item category1">
         <img src="img/TheLastOfUsRe.webp" alt="Producto 1">
@@ -432,7 +521,7 @@
       <!-- Más productos aquí -->
     </div>
 
-    <h2>Populares<button class="info-btn" id="open-button-category3">Ver más ></button></h2>
+    <h2>Populares</h2>
     <div class="carousel">
       <div class="carousel-item category1">
         <img src="img/!TheLastOfUsII.avif" alt="Producto 1">
@@ -533,7 +622,7 @@
       <!-- Más productos aquí -->
     </div>
 
-    <h2>Recientes<button class="info-btn" id="open-button-category4">Ver más ></button></h2>
+    <h2>Recientes</h2>
     <div class="carousel">
       <div class="carousel-item category1">
         <img src="producto1.jpg" alt="Producto 1">
