@@ -101,6 +101,7 @@ header.top {
     text-align: center;
     backdrop-filter: blur(-30px);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: default;
 }
 
 .carousel-item:hover {
@@ -183,3 +184,7 @@ footer {
     cursor: pointer;
 }
 
+.ver-mas{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
